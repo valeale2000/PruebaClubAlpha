@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Chips Activos</title>
+</head>
+<body>
+<h1>Lista de Chips Activos</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID Automóvil</th>
+        <th>Color</th>
+        <th>Placas</th>
+        <th>Marca</th>
+        <th>ID Cliente</th>
+        <th>ID Chip</th>
+        <th>Esta activo</th>
+        <th>Club</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="chip : ${chips}">
+        <td th:text="${chip.id}"></td>
+        <td th:text="${chip.color}"></td>
+        <td th:text="${chip.placa}"></td>
+        <td th:text="${chip.marca}"></td>
+        <td th:text="${chip.client.id}"></td>
+        <td th:text="${chip.chipId}"></td>
+        <td th:text="${chip.activo}"></td>
+        <td th:text="${chip.club.id}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
